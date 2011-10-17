@@ -1,12 +1,11 @@
 Package: dr
 Version: 3.0.7
-Date:  2011/03/31
+Date:  2011/10/17
 Title: Methods for dimension reduction for regression
 Author: Sanford Weisberg <sandy@stat.umn.edu>,
 Maintainer: Sanford Weisberg <sandy@stat.umn.edu>
 Depends:  MASS
 LazyData: yes
-LazyLoad: no
 Description: Functions, methods, and datasets for fitting dimension
  reduction regression, using slicing (methods SAVE and SIR), Principal
  Hessian Directions (phd, using residuals and the response), and an
