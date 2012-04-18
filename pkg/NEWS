@@ -1,0 +1,4 @@
+Changes to Version 3.0.8
+
+    o Corrected bug with na.option in 'dr'
+

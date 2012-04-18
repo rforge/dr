@@ -26,6 +26,7 @@ dr <-
 function(formula, data, subset, group=NULL, na.action=na.fail, weights,...)
 {      
     mf <- match.call(expand.dots=FALSE)
+    mf$na.action <- na.action
     if(!is.null(mf$group)) {
      mf$group <- eval(parse(text=as.character(group)[2]), 
                      data,environment(group)) }
@@ -547,22 +548,32 @@ plot.dr <- function
 
 
 markby <-
-function(z,use="color",values=NULL,color.fn=rainbow,na.action="na.use") {
- u <- unique(z)
- lu <- length(u)
- ans <- 0
- vals <- if (use == "color") 
-      {if (!is.null(values) && length(values) == lu)
-                values else color.fn(lu)}
-   else
-      {if (!is.null(values) && length(values) == lu)
-                   values else 1:lu}
- for (j in 1:lu)
-      if (is.na(u[j])) 
-         {ans[which(is.na(z))] <- 
-         if(na.action=="na.use") vals[j] else NA} else
-         {ans[z==u[j]] <- vals[j]}
- ans}
+function (z, use = "color", values = NULL, color.fn = rainbow,
+    na.action = "na.use")
+{
+    u <- unique(z)
+    lu <- length(u)
+    ans <- 0
+    vals <- if (use == "color") {
+        if (!is.null(values) && length(values) == lu)
+            values
+        else color.fn(lu)
+    }
+    else {
+        if (!is.null(values) && length(values) == lu)
+            values
+        else 1:lu
+    }
+    for (j in 1:lu) if (is.na(u[j])) {
+        ans[which(is.na(z))] <- if (na.action == "na.use")
+            vals[j]
+        else NA
+    }
+    else {
+        ans[z == u[j]] <- vals[j]
+    }
+    ans
+}
    
 
 ###################################################################

@@ -1,6 +1,6 @@
 Package: dr
-Version: 3.0.7
-Date:  2011/10/17
+Version: 3.0.8
+Date:  2012/05/18
 Title: Methods for dimension reduction for regression
 Author: Sanford Weisberg <sandy@stat.umn.edu>,
 Maintainer: Sanford Weisberg <sandy@stat.umn.edu>
