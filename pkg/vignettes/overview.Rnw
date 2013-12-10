@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage{url,Sweave,html,alltt}
-%%\VignetteIndexEntry{Overview and Examples}
+%\VignetteIndexEntry{Overview and Examples}
 \newcommand{\R}{{\normalfont\textsf{R}}{}}
 \renewcommand{\vec}{\mathrm{vec}}
 \newcommand{\vn}[1]{\mbox{{\em #1}}}
@@ -428,7 +428,6 @@ library(dr)
 opt <- options(width=66)
 @
 <<a11,echo=TRUE>>=
-data(ais)
 summary(s0 <- dr(LBM~log(SSF)+log(Wt)+log(Hg)+log(Ht)+log(WCC)+log(RCC)+
   log(Hc)+log(Ferr),data=ais,slice.function=dr.slices.arc,nslices=8,
   chi2approx="wood",numdir=4,method="sir"))
